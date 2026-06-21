@@ -1,5 +1,3 @@
-package org.example.model;
-
 import jakarta.persistence.*;
 import java.time.LocalDateTime;
 
@@ -13,46 +11,28 @@ public class Puntuacion {
 
     private String nombreNino;
     private int estrellas;
-    private LocalDateTime fecha;
 
-    // Constructores
+    // NUEVA COLUMNA PARA IDENTIFICAR EL JUEGO
+    private String juego;
+
+    private LocalDateTime fecha = LocalDateTime.now();
+
+    // Constructores vacíos exigidos por JPA
     public Puntuacion() {}
 
-    public Puntuacion(String nombreNino, int estrellas) {
-        this.nombreNino = nombreNino;
-        this.estrellas = estrellas;
-    }
-
     // Getters y Setters
-    public Long getId() {
-        return id;
-    }
+    public Long getId() { return id; }
+    public void setId(Long id) { this.id = id; }
 
-    public void setId(Long id) {
-        this.id = id;
-    }
+    public String getNombreNino() { return nombreNino; }
+    public void setNombreNino(String nombreNino) { this.nombreNino = nombreNino; }
 
-    public String getNombreNino() {
-        return nombreNino;
-    }
+    public int getEstrellas() { return estrellas; }
+    public void setEstrellas(int estrellas) { this.estrellas = estrellas; }
 
-    public void setNombreNino(String nombreNino) {
-        this.nombreNino = nombreNino;
-    }
+    public String getJuego() { return juego; }
+    public void setJuego(String juego) { this.juego = juego; }
 
-    public int getEstrellas() {
-        return estrellas;
-    }
-
-    public void setEstrellas(int estrellas) {
-        this.estrellas = estrellas;
-    }
-
-    public LocalDateTime getFecha() {
-        return fecha;
-    }
-
-    public void setFecha(LocalDateTime fecha) {
-        this.fecha = fecha;
-    }
+    public LocalDateTime getFecha() { return fecha; }
+    public void setFecha(LocalDateTime fecha) { this.fecha = fecha; }
 }
